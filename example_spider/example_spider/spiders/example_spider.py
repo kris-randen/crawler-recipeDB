@@ -1,8 +1,8 @@
 import scrapy
 
-file_nutrients = 'recipe_nutrients_20000_20009.csv'
-file_ingredients = 'recipe_ingredients_20000_20009.csv'
-file_overview = 'recipe_overview_20000_20009.csv'
+file_nutrients = 'recipe_nutrients_147200_149191.csv'
+file_ingredients = 'recipe_ingredients_147200_149191.csv'
+file_overview = 'recipe_overview_147200_149191.csv'
 
 INGREDIENT_NAMES = "ingredient_names"
 INGREDIENT_FIELDS = "ingredient_fields"
@@ -131,7 +131,7 @@ class ExampleSpider(scrapy.Spider):
 
     def start_requests(self):
 
-        urls = ["https://cosylab.iiitd.edu.in/recipedb/search_recipeInfo/" + x for x in [f"{i}" for i in range(20000, 20009)]]
+        urls = ["https://cosylab.iiitd.edu.in/recipedb/search_recipeInfo/" + x for x in [f"{i}" for i in range(147200, 149191)]]
 
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
